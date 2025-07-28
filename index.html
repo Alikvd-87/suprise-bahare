@@ -31,6 +31,16 @@
     }
 
     #videoBox video {
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+
+    #fullVideoBox {
+      display: none;
+    }
+
+    #fullVideoBox video {
       position: fixed;
       top: 0;
       left: 0;
@@ -59,22 +69,32 @@
         مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
       </video>
     </div>
+
+    <div id="fullVideoBox">
+      <video id="fullVideo" controls>
+        <source src="ali.mp4" type="video/mp4">
+        مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+      </video>
+    </div>
   </div>
 
   <script>
     const heart = document.querySelector('.heart');
     const videoBox = document.getElementById('videoBox');
+    const fullVideoBox = document.getElementById('fullVideoBox');
     const loveVideo = document.getElementById('loveVideo');
+    const fullVideo = document.getElementById('fullVideo');
 
     heart.addEventListener('click', () => {
       videoBox.style.display = 'block';
       loveVideo.play();
       heart.style.display = 'none';
 
-      // بعد از ۱۵ ثانیه ویدیو متوقف بشه (اختیاری)
       setTimeout(() => {
-        loveVideo.pause();
-      }, 15000);
+        videoBox.style.display = 'none';
+        fullVideoBox.style.display = 'block';
+        fullVideo.play();
+      }, 14000); // ویدیو اول ۱۴ ثانیه پخش می‌شه
     });
   </script>
 </body>
