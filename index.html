@@ -2,38 +2,72 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
-  <title>Surprise for Bahare 💝</title>
+  <title>دلتنگیییی</title>
+  <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet">
+  <link href="https://cdn.fontcdn.ir/Font/Persian/Lalezar/Lalezar.css" rel="stylesheet">
+
   <style>
     body {
+      background: linear-gradient(to right, #ffa500, #add8e6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      font-family: Tahoma, sans-serif;
+      direction: rtl;
+      overflow: hidden;
       margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-      background: #000;
-      color: #fff;
-      text-align: center;
     }
 
     .container {
-      padding: 20px;
+      background-color: #ffe5b4;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+      text-align: center;
+      max-width: 600px;
+      z-index: 1;
+    }
+
+    .surprise {
+      font-family: 'Lalezar', cursive;
+      font-size: 24px;
+      color: #ff0055;
+      margin-bottom: 20px;
+    }
+
+    .container p {
+      font-family: 'Vazir', Tahoma, sans-serif;
+      color: #333333;
+      font-size: 18px;
+      line-height: 1.8;
     }
 
     .heart {
       width: 100px;
       height: 100px;
-      background: url('heart.png') no-repeat center center;
-      background-size: contain;
+      background: red;
+      border-radius: 50%;
       margin: 30px auto;
       cursor: pointer;
+      animation: heartbeat 1.2s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
     }
 
     #videoBox {
+      margin-top: 30px;
       display: none;
     }
 
     #videoBox video {
       width: 300px;
       border-radius: 15px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+      box-shadow: 0 0 15px rgba(255,255,255,0.5);
     }
 
     #fullVideoBox {
@@ -62,36 +96,28 @@
       اگه دوست داشتی روی دایره پایین کلیک کن.
     </p>
     <div class="heart"></div>
-
     <div id="videoBox">
       <video id="loveVideo" controls>
         <source src="bahar.mp4" type="video/mp4">
         مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
       </video>
     </div>
-
-    
-      </video>
-    </div>
   </div>
+
+
 
   <script>
     const heart = document.querySelector('.heart');
     const videoBox = document.getElementById('videoBox');
-    const fullVideoBox = document.getElementById('fullVideoBox');
     const loveVideo = document.getElementById('loveVideo');
+    const fullVideoBox = document.getElementById('fullVideoBox');
     const fullVideo = document.getElementById('fullVideo');
 
     heart.addEventListener('click', () => {
       videoBox.style.display = 'block';
       loveVideo.play();
       heart.style.display = 'none';
-
-      setTimeout(() => {
-        videoBox.style.display = 'none';
-        fullVideoBox.style.display = 'block';
-        fullVideo.play();
-      }, 15000); // ویدیو اول ۱۴ ثانیه پخش می‌شه
+     
     });
   </script>
 </body>
